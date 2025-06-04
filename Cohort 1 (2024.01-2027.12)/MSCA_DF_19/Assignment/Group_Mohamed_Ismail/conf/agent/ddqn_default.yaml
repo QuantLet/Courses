@@ -1,0 +1,16 @@
+# conf/agent/ddqn_default.yaml
+# @package agent
+
+type: DDQN # Identifier for this agent type
+
+# Hyperparameters are often similar to DQN, but can be tuned independently
+buffer_size: 100000
+batch_size: 64
+gamma: 0.99
+tau: 0.001
+lr: 0.0005
+update_every: 4
+target_update_freq: 100
+hidden_layers: [256, 128]
+
+# No 'use_double_dqn' flag needed here, as this IS the Double DQN config.

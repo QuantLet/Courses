@@ -1,0 +1,12 @@
+# @package optuna
+
+n_trials: 10
+timeout_seconds: null # e.g., 3600 for 1 hour
+study_name: "financial-rec-dqn-study"
+storage_db_name: "financial_rec_study.db" # Relative to Hydra output dir
+
+training_episodes_per_trial: 50
+evaluation_episodes_per_trial: 20
+
+pruner:
+  _target_: optuna.pruners.NopPruner

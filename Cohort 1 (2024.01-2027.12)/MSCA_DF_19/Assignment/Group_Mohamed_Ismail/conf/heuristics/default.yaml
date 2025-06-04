@@ -1,0 +1,11 @@
+# conf/heuristics/default.yaml
+
+
+lookback_days: 10
+cvxpy_solver: "SCS" # For MVO when/if added
+
+# List of heuristic strategies to run during evaluation
+strategies_to_run:
+  - "Equal Weight"
+  - "Risk Parity"
+  # - "MVO" # Uncomment when MVO is implemented

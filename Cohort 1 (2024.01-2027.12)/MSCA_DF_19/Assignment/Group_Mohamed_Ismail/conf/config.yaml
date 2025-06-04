@@ -1,0 +1,54 @@
+# conf/config.yaml
+# @package _group_
+defaults:
+  - _self_
+  - agent: dqn_default
+  - data: default
+  - environment: default
+  - training: default
+  - optuna: default
+  - evaluation: default
+  - heuristics: default
+  # - override hydra/job_logging: default  # Temporarily comment out to simplify
+  # - override hydra/hydra_logging: default # Temporarily comment out to simplify
+
+project_name: "financial_rl_project"
+seed: 0
+run_optuna: true
+train_final_agent: true
+evaluate_baselines: true
+evaluate_final_agent: true
+use_real_data: false
+
+dqn_save_filename: "financial_dqn_agent_best.pth"
+best_params_save_filename: "best_hyperparameters.json"
+
+
+plotting: 
+  rolling_avg_window: 50
+  composition_top_n_assets: 7
+
+
+device: "auto"
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}/${hydra.job.override_dirname}
+    subdir: ${hydra.job.num}
+  job:
+    # name: ${hydra.job.override_dirname} # <<<< COMMENTED OUT THIS LINE
+    config:
+      override_dirname:
+        exclude_keys:
+          - project_name
+          - seed
+          - run_optuna
+          - train_final_agent
+          - evaluate_baselines
+          - evaluate_final_agent
+          - use_real_data
+          - dqn_save_filename
+          - best_params_save_filename
+          - device
