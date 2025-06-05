@@ -1,0 +1,4 @@
+# @package evaluation
+
+num_eval_episodes: 100
+num_random_episodes: 100
