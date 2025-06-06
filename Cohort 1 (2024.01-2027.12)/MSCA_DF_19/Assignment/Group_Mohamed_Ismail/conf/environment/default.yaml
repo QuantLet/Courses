@@ -1,0 +1,10 @@
+# @package environment
+
+initial_offset_months: 12
+episode_max_steps: 100
+accept_probability: 1.0
+
+reward_scale: 10
+reward_price_weight: 1
+reward_risk_weight: 1
+reward_hhi_weight: 1

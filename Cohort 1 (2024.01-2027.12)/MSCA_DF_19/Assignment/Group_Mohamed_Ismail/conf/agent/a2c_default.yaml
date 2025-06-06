@@ -1,0 +1,24 @@
+# conf/agent/a2c_default.yaml
+# @package agent
+
+# name: a2c_default # This line is not needed due to filename being 'a2c_default'
+
+type: A2C # Identifier for this agent type
+
+# Actor Network
+actor_hidden_layers: [128, 64]
+actor_lr: 0.0001
+
+# Critic Network
+critic_hidden_layers: [128, 64]
+critic_lr: 0.0005
+
+# A2C Specific
+gamma: 0.99          # Discount factor for future rewards
+entropy_coefficient: 0.01 # Weight for entropy bonus in actor loss (encourages exploration)
+# value_loss_coefficient: 0.5 # Weight for critic loss (often 0.5 or 1.0)
+
+# Unlike DQN, A2C often updates after collecting a trajectory or a fixed number of steps.
+# It doesn't typically use a large replay buffer in its simplest form.
+# update_horizon: 5 # Example: Number of steps to collect before an update (n-step returns)
+# max_grad_norm: 0.5 # For gradient clipping
