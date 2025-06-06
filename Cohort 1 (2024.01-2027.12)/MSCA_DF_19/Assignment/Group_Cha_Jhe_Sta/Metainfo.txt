@@ -1,0 +1,16 @@
+Name of Quantlet: Group_Cha_Jhe_Sta
+
+Published in: MSCA RL Project Final Presentation
+
+Description: Reinforcement Learning for Cryptocurrency Portfolio Management
+
+Submitted: 06 June 2025
+
+Keywords: 
+- Cryptocurrency portfolio optimization
+- Deep reinforcement learning
+- N-BEATS
+- Risk-aware policy
+- Transaction costs
+
+Author: Owen Chaffard, Siang-Li Jheng, and Megang Nkamga Junile Staures
